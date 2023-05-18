@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClientService } from './http-client.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'NolekSearchEngine1';
+  data: any;
+
+  constructor(private httpClient: HttpClientService) { }
+
+  ngOnInit() {
+    this.httpClient.getData().subscribe((response) => {
+      this.data = response;
+    });
+  }
 }
