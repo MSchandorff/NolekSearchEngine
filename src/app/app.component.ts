@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClientService } from './http-client.service';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +6,5 @@ import { HttpClientService } from './http-client.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  data: any;
-
-  constructor(private httpClient: HttpClientService) { }
-
-  ngOnInit() {
-    this.httpClient.getData().subscribe((response) => {
-      this.data = response;
-    });
-  }
+  title = 'Leak testing since 1973';
 }

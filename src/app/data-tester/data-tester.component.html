@@ -1,0 +1,19 @@
+<h2>Data Items 2</h2>
+
+<ul>
+  <li>
+    <canvas baseChart
+            [datasets]="getChartData(selectedProperty || '')"
+            [labels]="getChartLabels()"
+            [type]="'line'"
+            [options]="getChartOptions()"
+            [legend]="true">
+</canvas>
+  </li>
+</ul>
+
+<mat-grid-list cols="5">
+  <mat-grid-tile *ngFor="let property of properties">
+    <button mat-button (click)="selectProperty(property)">{{ property }}</button>
+  </mat-grid-tile>
+</mat-grid-list>

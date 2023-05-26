@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+  }
+  
+  .index-list {
+    width: 25%;
+    padding: 20px;
+    /* Add any additional styling for the index list section */
+  }
+  
+  .data-tester {
+    width: 75%;
+    padding: 20px;
+    /* Add any additional styling for the data tester section */
+  }
