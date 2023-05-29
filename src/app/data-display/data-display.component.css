@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  height: 100vh; /* Set the container height to occupy the full viewport height */
+}
+
+.index-list {
+  width: 20%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.index-list button {
+  width: 240px;
+  height: 50px;
+  margin-bottom: 10px;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+.index-list button.selected {
+  border: 2px solid #8CB202;
+}
+
+.data-display {
+  width: 75%;
+  padding: 20px;
+  /* Add any additional styling for the data display section */
+}
+
+.index-list,
+.data-display {
+  overflow-y: auto; /* Add scrollbars when content exceeds the container height */
+}

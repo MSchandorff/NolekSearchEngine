@@ -18,7 +18,7 @@ export class IndexListComponent implements OnInit {
   constructor(private dataTestService: DataTestService) { }
 
   ngOnInit(): void {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBZG1pbiIsImp0aSI6ImI2MWUzMDVhLWYxZGQtNGU1Mi1iNWE1LWI3YjE1NzU5ZTNjNyIsImVtYWlsIjoiYWRtaW5AVEVTVC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjdhNjM5MmU5LTQ1M2EtNGU0Mi1iZjAyLWRiOGZhOTRjMDNjZiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg1MDU3MzAzLCJpc3MiOiJJZGVudGl0eUFQSSIsImF1ZCI6IklkZW50aXR5QVBJVXNlciJ9.niRC7JJt7pR-o7sgIxJg8IcimLq0qOY5e2EEmohh7cw';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBZG1pbiIsImp0aSI6IjU5NTk4YThhLTk4ZGYtNDA0MS05Mzg3LTBiNTA1MjNkYjhiZCIsImVtYWlsIjoiYWRtaW5AVEVTVC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjdhNjM5MmU5LTQ1M2EtNGU0Mi1iZjAyLWRiOGZhOTRjMDNjZiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg1MTExNzQyLCJpc3MiOiJJZGVudGl0eUFQSSIsImF1ZCI6IklkZW50aXR5QVBJVXNlciJ9.icerrNAzeanPsUts6UFLTneac4l3EXuO1TG6KNFJb1M';
     
     const startDate = new Date(this.startDate);
     const endDate = new Date(this.endDate);
@@ -40,7 +40,7 @@ export class IndexListComponent implements OnInit {
 
     forkJoin(requests).subscribe(
       (responses: PlcBundle[]) => {
-        console.log('API Responses:', responses); // Check the received responses
+        console.log('API Responses:', responses); // Check received responses
         this.indexes = responses;
       },
       (error: any) => {
@@ -52,7 +52,7 @@ export class IndexListComponent implements OnInit {
   selectIndex(index: PlcBundle): void {
     this.selected = index;
 
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBZG1pbiIsImp0aSI6ImI2MWUzMDVhLWYxZGQtNGU1Mi1iNWE1LWI3YjE1NzU5ZTNjNyIsImVtYWlsIjoiYWRtaW5AVEVTVC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjdhNjM5MmU5LTQ1M2EtNGU0Mi1iZjAyLWRiOGZhOTRjMDNjZiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg1MDU3MzAzLCJpc3MiOiJJZGVudGl0eUFQSSIsImF1ZCI6IklkZW50aXR5QVBJVXNlciJ9.niRC7JJt7pR-o7sgIxJg8IcimLq0qOY5e2EEmohh7cw';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBZG1pbiIsImp0aSI6IjU5NTk4YThhLTk4ZGYtNDA0MS05Mzg3LTBiNTA1MjNkYjhiZCIsImVtYWlsIjoiYWRtaW5AVEVTVC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjdhNjM5MmU5LTQ1M2EtNGU0Mi1iZjAyLWRiOGZhOTRjMDNjZiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg1MTExNzQyLCJpc3MiOiJJZGVudGl0eUFQSSIsImF1ZCI6IklkZW50aXR5QVBJVXNlciJ9.icerrNAzeanPsUts6UFLTneac4l3EXuO1TG6KNFJb1M';
 
     const body = {
       index: `${this.selected.index}-plc_testing-general`,

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DataTesterComponent } from './data-tester/data-tester.component';
+import { DataDisplayComponent } from './data-display/data-display.component';
 
 const routes: Routes = [
-  { path: 'data-tester', component: DataTesterComponent },
-  { path: '', redirectTo: '/data-tester', pathMatch: 'full' }
+  { path: 'data-display', component: DataDisplayComponent },
+  { path: '', redirectTo: '/data-display', pathMatch: 'full' }
 ];
 
 @NgModule({

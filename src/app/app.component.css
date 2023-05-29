@@ -1,15 +1,13 @@
-.container {
-    display: flex;
-  }
-  
-  .index-list {
-    width: 25%;
-    padding: 20px;
-    /* Add any additional styling for the index list section */
-  }
-  
-  .data-tester {
-    width: 75%;
-    padding: 20px;
-    /* Add any additional styling for the data tester section */
-  }
+.green-bar {
+  background-color: #8CB202;
+  padding: 20px;
+  position: relative;
+}
+
+.green-bar h3 {
+  color: white;
+  margin-left: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

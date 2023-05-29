@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DateListComponent } from './date-list.component';
+import { DataDisplayComponent } from './data-display.component';
 
-describe('DateListComponent', () => {
-  let component: DateListComponent;
-  let fixture: ComponentFixture<DateListComponent>;
+describe('DataDisplayComponent', () => {
+  let component: DataDisplayComponent;
+  let fixture: ComponentFixture<DataDisplayComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DateListComponent ]
+      declarations: [ DataDisplayComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DateListComponent);
+    fixture = TestBed.createComponent(DataDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

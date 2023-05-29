@@ -10,18 +10,16 @@ import { NgChartsModule } from 'ng2-charts';
 import { DataHandlerService } from './data-handler.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth-interceptor.service';
-import { DataTesterComponent } from './data-tester/data-tester.component';
+import { DataDisplayComponent } from './data-display/data-display.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { IndexListComponent } from './index-list/index-list.component';
-import { DateListComponent } from './date-list/date-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DataTesterComponent,
-    IndexListComponent,
-    DateListComponent
+    DataDisplayComponent,
+    IndexListComponent
   ],
   imports: [
     BrowserModule,
