@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  height: 100vh; /* Set the container height to occupy the full viewport height */
+  height: 100vh;
 }
 
 .index-list {
@@ -8,7 +8,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .index-list button {
@@ -25,12 +25,38 @@
 }
 
 .data-display {
-  width: 75%;
-  padding: 20px;
-  /* Add any additional styling for the data display section */
+  flex: 0.95 1 auto;
+  flex-direction: column;
 }
 
-.index-list,
-.data-display {
-  overflow-y: auto; /* Add scrollbars when content exceeds the container height */
+.chart-container {
+  flex: 1 1 auto;
+  padding: 20px;
+}
+
+.chart-container ul {
+  margin: 0;
+  padding: 0;
+}
+
+.property-select mat-grid-tile {
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  margin: 2px;
+}
+
+.property-select mat-grid-tile button {
+  width: 80%;
+  height: 80%;
+  border: 2px solid #8CB202;
+}
+
+.property-select mat-grid-tile button.mat-stroked-button {
+  color: black;
+}
+
+.property-select mat-grid-tile button.selected {
+  background-color: #8CB202;
+  color: white;
 }

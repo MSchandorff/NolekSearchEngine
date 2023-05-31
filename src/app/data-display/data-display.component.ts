@@ -29,7 +29,7 @@ export class DataDisplayComponent implements OnInit {
   }
 
   fetchPlcData(date: string): void {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBZG1pbiIsImp0aSI6IjU5NTk4YThhLTk4ZGYtNDA0MS05Mzg3LTBiNTA1MjNkYjhiZCIsImVtYWlsIjoiYWRtaW5AVEVTVC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjdhNjM5MmU5LTQ1M2EtNGU0Mi1iZjAyLWRiOGZhOTRjMDNjZiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg1MTExNzQyLCJpc3MiOiJJZGVudGl0eUFQSSIsImF1ZCI6IklkZW50aXR5QVBJVXNlciJ9.icerrNAzeanPsUts6UFLTneac4l3EXuO1TG6KNFJb1M';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBZG1pbiIsImp0aSI6IjkzMzBhNjA3LTZiNjYtNDBmNS1iMTE1LTZjZWQwMmZkOGM4NyIsImVtYWlsIjoiYWRtaW5AVEVTVC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjdhNjM5MmU5LTQ1M2EtNGU0Mi1iZjAyLWRiOGZhOTRjMDNjZiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjg1NTQzMjgzLCJpc3MiOiJJZGVudGl0eUFQSSIsImF1ZCI6IklkZW50aXR5QVBJVXNlciJ9.vU6SsVp-ezm2qeRcXLpQPdLCu4NR3y0u1e1y3_EZitU';
     const body = {
       index: `${date}-plc_testing-general`,
       query: `index:${date}-plc_testing-general`,
@@ -55,13 +55,10 @@ export class DataDisplayComponent implements OnInit {
     return Object.keys(firstItem?.item ?? {});
   }
   
-  // Function to retrieve the properties to be used for the chart
   getChartProperties(): string[] {
-    // Modify this based on your desired properties
     return ['TMP1', 'TMP2', 'B31', 'B32'];
   }
 
-  // // Function to retrieve the chart data for a specific property
   getChartData(property: string): any[] {
     if (!this.selectedProperty) {
       return [];
@@ -80,20 +77,24 @@ export class DataDisplayComponent implements OnInit {
     return [chartData];
   }
   
-  // Function to retrieve the chart labels (using array index)
   getChartLabels(): string[] {
     return this.plcDataItems.map((item: PlcData, index: number) => (index + 1).toString());
   }
 
-  // Function to retrieve the chart options
   getChartOptions(): any {
     return {
       responsive: true,
       scales: {
         y: {
           beginAtZero: true
-        }
-      }
+        },
+      },
+      plugins: {
+        legend: {
+          onClick: null,
+          display: true,
+        },
+      },
     };
   }
 }
